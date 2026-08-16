@@ -52,10 +52,10 @@
       ],
       "id": "f715f00f-d449-4a4d-a3d0-9b15625bf856",
       "name": "Send a text message",
-      "webhookId": "YOUR_N8N_WEBHOOK_ID",
+      "webhookId": "3dcc29c1-9171-4186-8ffe-f2a9a9a47217",
       "credentials": {
         "telegramApi": {
-          "id": "YOUR_TELEGRAM_CREDENTIAL_ID",
+          "id": "mwbsni psvd",
           "name": "Telegram account"
         }
       }
@@ -69,7 +69,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer YOUR_GAPGPT_API_KEY"
+              "value": "Bearer sk-*******************************************"
             },
             {
               "name": "Content-Type",
@@ -79,7 +79,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"model\": \"deepseek-v4-flash\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"تو مسئول تولید محتوای کانال فارسی «سخن بزرگان» هستی.\\n\\nنوع پست موردنظر: {{ $node[\\\"Edit Fields1\\\"].json[\\\"نوع_پست\\\"] }}\\n\\nوظیفه تو انتخاب یک نقل‌قول واقعی، معتبر، دقیق و قابل استناد از یک شخصیت شناخته‌شده است.\\n\\nقوانین انتخاب نقل‌قول:\\n- فقط از نقل‌قول‌های واقعی و معتبر استفاده کن.\\n- به هیچ عنوان جمله‌ای از خودت نساز.\\n- نقل‌قول را بازنویسی، خلاصه، ساده‌سازی، ترجمه آزاد، تغییر یا تکمیل نکن.\\n- متن نقل‌قول باید تا حد امکان همان شکل اصلی و کامل نقل‌قول باشد.\\n- حداکثر ۴۰ کلمه باشد.\\n- نقل‌قول باید عمیق، معنی‌دار و قابل تأمل باشد.\\n- نقل‌قول‌های بسیار کوتاه، سطحی، انگیزشی و کلیشه‌ای را انتخاب نکن.\\n- از جملات کلیشه‌ای مانند «زندگی زیباست»، «توانا بود هر که دانا بود» و موارد مشابه استفاده نکن.\\n- اگر درباره صحت انتساب نقل‌قول به یک شخص مطمئن نیستی، آن نقل‌قول را انتخاب نکن.\\n- نام گوینده را دقیق و به فارسی بنویس.\\n- از انتخاب چندباره یک نقل‌قول یا نسخه‌ای بسیار مشابه از همان نقل‌قول خودداری کن.\\n- تنوع گویندگان بسیار مهم است.\\n- یک گوینده را در پست‌های متوالی انتخاب نکن.\\n- اگر اخیراً از یک گوینده نقل‌قول انتخاب شده، این بار شخص دیگری را انتخاب کن.\\n- بین گویندگان مختلف مانند فیلسوفان، نویسندگان، شاعران، دانشمندان، هنرمندان و شخصیت‌های تاریخی تنوع ایجاد کن.\\n- فقط به چند شخصیت معروف مانند بودا، مولانا، نیچه، انیشتین و حافظ محدود نشو.\\n- اولویت با نقل‌قول‌های کمتر تکرارشده و کمتر کلیشه‌ای از افراد معتبر است.\\n\\nقوانین مربوط به تکراری نبودن:\\n- قبل از انتخاب، بررسی کن که نقل‌قول انتخابی با نقل‌قول‌های رایج و معروفی که قبلاً بارها در کانال‌ها استفاده شده‌اند یکسان یا بسیار مشابه نباشد.\\n- اگر چند نقل‌قول از یک شخص در ذهن داری، متفاوت‌ترین و کمتر کلیشه‌ای‌ترین گزینه را انتخاب کن.\\n- اگر بین یک نقل‌قول بسیار معروف و یک نقل‌قول معتبر اما کمتر استفاده‌شده حق انتخاب داری، گزینه کمتر کلیشه‌ای را انتخاب کن.\\n\\nقوانین مربوط به پست تصویری:\\nاگر نوع پست «تصویری» است، برای همان نقل‌قول یک image_prompt حرفه‌ای به زبان انگلیسی تولید کن.\\n\\nimage_prompt نباید یک تصویر عمومی و بی‌ربط باشد.\\nتصویر باید مستقیماً مفهوم، احساس، استعاره یا موقعیت توصیف‌شده در خود نقل‌قول را نمایش دهد.\\n\\nبرای ساخت image_prompt این مراحل را در ذهن انجام بده:\\n1. ابتدا مفهوم اصلی نقل‌قول را مشخص کن.\\n2. احساس غالب نقل‌قول را مشخص کن؛ مانند تنهایی، امید، آزادی، قدرت، شکست، عشق، تفکر، زمان، مرگ، انتخاب یا رشد.\\n3. سپس یک صحنه مشخص و قابل مشاهده طراحی کن که این مفهوم را نشان دهد.\\n4. اگر نقل‌قول درباره یک مفهوم انتزاعی است، آن را با یک استعاره بصری واضح و قابل فهم نمایش بده.\\n5. اگر نقل‌قول درباره یک شخصیت یا انسان است، محیط، حالت چهره، زبان بدن و نورپردازی باید با مفهوم نقل‌قول هماهنگ باشد.\\n\\nimage_prompt باید شامل این ویژگی‌ها باشد:\\n- ultra-realistic\\n- photorealistic\\n- cinematic composition\\n- natural realistic lighting\\n- physically accurate human anatomy\\n- realistic skin, clothing and environmental details\\n- realistic depth of field\\n- emotionally powerful\\n- visually clear storytelling\\n- directly related to the meaning of the quote\\n- no generic stock-photo feeling\\n- no random objects unrelated to the quote\\n- no text\\n- no typography\\n- no captions\\n- no logo\\n- no watermark\\n- no artificial AI look\\n\\nتصویر نباید صرفاً یک پرتره عمومی، منظره تصادفی یا تصویر زیبای بدون ارتباط با نقل‌قول باشد.\\nارتباط معنایی بین تصویر و نقل‌قول باید واضح باشد.\\n\\nاگر نوع پست «متنی» است، مقدار image_prompt را دقیقاً به صورت رشته خالی قرار بده.\\n\\nخروجی فقط JSON معتبر باشد و دقیقاً شامل این سه فیلد باشد:\\n{\\n  \\\"quote\\\": \\\"متن کامل و دقیق نقل‌قول\\\",\\n  \\\"author\\\": \\\"نام دقیق گوینده\\\",\\n  \\\"image_prompt\\\": \\\"پرامپت تصویر دقیق و مرتبط به زبان انگلیسی یا رشته خالی برای پست متنی\\\"\\n}\\n\\nهیچ متن دیگری خارج از JSON تولید نکن.\"\n    }\n  ],\n  \"response_format\": {\n    \"type\": \"json_object\"\n  }\n}",
+        "jsonBody": "{\n  \"model\": \"deepseek-v4-flash\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"تو مسئول تولید محتوای کانال فارسی «سخن بزرگان» هستی.\\n\\nنوع پست موردنظر:\\n{{ $node[\\\"Edit Fields1\\\"].json[\\\"نوع_پست\\\"] }}\\n\\nیک محتوای واقعی، معتبر، دقیق و قابل استناد انتخاب کن.\\n\\nتوزیع تقریبی نوع محتوا:\\n35 درصد نقل قول واقعی از شخصیت های شناخته شده\\n15 درصد بخش کوتاه و واقعی از کتاب ها و آثار ادبی معتبر\\n15 درصد دیالوگ واقعی و معنادار از فیلم ها یا سریال های معروف\\n15 درصد شعر یا بیت واقعی و معنادار از شاعران ایرانی یا خارجی\\n10 درصد بخش کوتاه و واقعی از مناظره ها، گفتگوها یا سخنرانی های مشهور\\n10 درصد بخش کوتاه و واقعی از ترانه ها و آهنگ های اصیل و شناخته شده\\n\\nموضوعات پیشنهادی شامل عشق، خدا، انسان، زندگی، مرگ، تنهایی، آزادی، امید، فلسفه، حماسه، رنج، انتخاب، شکست، پیروزی، زمان و دیگر مفاهیم عمیق انسانی هستند.\\n\\nمحتوا نباید فقط حرف انگیزشی و کلیشه ای باشد.\\nاولویت با محتواهای خاص، عمیق، احساسی، تاثیرگذار، ماندگار و جذاب برای عموم مردم است.\\n\\nقوانین اصلی:\\n- فقط محتوای واقعی و معتبر انتخاب کن.\\n- هیچ جمله، شعر، دیالوگ، متن کتاب یا ترانه ای را از خودت نساز.\\n- محتوا را بازنویسی یا تغییر نده.\\n- متن انتخاب شده را تا حد امکان به شکل اصلی خود ارائه کن.\\n- حداکثر طول محتوا 65 کلمه باشد.\\n- محتوای سطحی و کلیشه ای انتخاب نکن.\\n- از جملات بسیار معروف و مصرف شده تا حد امکان دوری کن.\\n- اگر درباره صحت محتوا یا انتساب آن مطمئن نیستی، آن را انتخاب نکن.\\n- تنوع بسیار مهم است.\\n- یک شخص یا منبع را پشت سر هم انتخاب نکن.\\n- فقط به بودا، مولانا، نیچه، انیشتین، حافظ و چند شخصیت معروف دیگر محدود نشو.\\n- از نویسندگان، شاعران، فیلسوفان، دانشمندان، هنرمندان، شخصیت های تاریخی و دیگر افراد معتبر تنوع ایجاد کن.\\n\\nبرای کتاب:\\nیک بخش کوتاه و واقعی از یک کتاب معتبر انتخاب کن و نویسنده را مشخص کن.\\n\\nبرای فیلم و سریال:\\nیک دیالوگ واقعی، معروف و معنادار انتخاب کن.\\nدیالوگ نباید ساخته مدل باشد.\\nنام گوینده و اثر را مشخص کن.\\n\\nبرای شعر:\\nیک شعر یا بیت واقعی و معنادار انتخاب کن.\\nموضوعات عاشقانه، عرفانی، حماسی و فلسفی مناسب هستند.\\nنام شاعر را دقیق مشخص کن.\\n\\nبرای مناظره و گفتگو:\\nیک بخش واقعی و قابل انتساب انتخاب کن که ارزش فکری یا احساسی داشته باشد.\\n\\nبرای ترانه:\\nیک بخش کوتاه و واقعی و معنادار از یک ترانه اصیل انتخاب کن.\\nموضوعاتی مانند عشق، تنهایی، انسان، خدا، وطن و احساسات عمیق انسانی مناسب هستند.\\nنام خواننده یا ترانه سرا را مشخص کن.\\n\\nقوانین تکراری نبودن:\\n- محتوای انتخاب شده نباید با محتوای قبلی یکسان یا بسیار مشابه باشد.\\n- اگر چند گزینه معتبر داری، خاص ترین و کمتر کلیشه ای ترین گزینه را انتخاب کن.\\n- تنوع افراد و منابع را در اولویت قرار بده.\\n\\nاگر نوع پست تصویری است:\\nبرای همان محتوا یک image_prompt حرفه ای به زبان انگلیسی تولید کن.\\n\\nتصویر باید مستقیما با مفهوم محتوا ارتباط داشته باشد.\\nابتدا مفهوم و احساس اصلی محتوا را در نظر بگیر و سپس یک صحنه واقعی و قابل مشاهده طراحی کن.\\nاز تصویر عمومی، منظره تصادفی، پرتره بی ربط یا تصویر زیبای بدون ارتباط با محتوا استفاده نکن.\\n\\nimage_prompt باید شامل این ویژگی ها باشد:\\nultra-realistic\\nphotorealistic\\ncinematic composition\\nnatural realistic lighting\\nphysically accurate human anatomy\\nrealistic skin and clothing\\nrealistic environmental details\\nrealistic depth of field\\nemotionally powerful\\nvisually clear storytelling\\ndirectly related to the meaning of the content\\nno generic stock photo feeling\\nno unrelated objects\\nno text\\nno typography\\nno captions\\nno logo\\nno watermark\\nno artificial AI look\\n\\nاگر نوع پست متنی است، image_prompt باید دقیقا رشته خالی باشد.\\n\\nخروجی فقط JSON معتبر باشد.\\nهیچ متن دیگری خارج از JSON تولید نکن.\\n\\nساختار خروجی دقیقا این باشد:\\n{\\n  \\\"quote\\\": \\\"متن کامل و دقیق محتوای انتخاب شده\\\",\\n  \\\"author\\\": \\\"نام دقیق گوینده یا نویسنده یا شاعر یا منبع\\\",\\n  \\\"image_prompt\\\": \\\"پرامپت دقیق تصویر به زبان انگلیسی یا رشته خالی\\\"\\n}\"\n    }\n  ],\n  \"response_format\": {\n    \"type\": \"json_object\"\n  }\n}",
         "options": {
           "timeout": 120000
         }
@@ -98,17 +98,17 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEETS_SPREADSHEET_ID",
+          "value": "1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw",
           "mode": "list",
           "cachedResultName": "Telegram Quotes Database",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_SPREADSHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 491147200,
           "mode": "list",
           "cachedResultName": "Quotes",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_SPREADSHEET_ID/edit#gid=491147200"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit#gid=491147200"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -162,7 +162,7 @@
       "name": "Append row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "id": "aFtryukiu",
           "name": "Google Sheets account 4"
         }
       }
@@ -171,10 +171,10 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEETS_SPREADSHEET_ID",
+          "value": "1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw",
           "mode": "list",
           "cachedResultName": "Telegram Quotes Database",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_SPREADSHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
@@ -197,7 +197,7 @@
       "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "id": "efawegthryjtuykiu",
           "name": "Google Sheets account 4"
         }
       }
@@ -325,7 +325,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer YOUR_GAPGPT_API_KEY"
+              "value": "Bearer sk-**************************************"
             },
             {
               "name": "Content-Type",
@@ -335,7 +335,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"gapgpt/z-image\",\n  \"prompt\": \"A cinematic ultra-realistic photograph of a peaceful natural scene, photorealistic, natural lighting, realistic details, no text, no logo, no watermark\",\n  \"size\": \"1024x1024\"\n}",
+        "jsonBody": "={\n  \"model\": \"gapgpt/z-image\",\n  \"prompt\": \"{{ $json.image_prompt }}\",\n  \"size\": \"1024x1024\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -352,17 +352,17 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEETS_SPREADSHEET_ID",
+          "value": "1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw",
           "mode": "list",
           "cachedResultName": "Telegram Quotes Database",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_SPREADSHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 491147200,
           "mode": "list",
           "cachedResultName": "Quotes",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_SPREADSHEET_ID/edit#gid=491147200"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit#gid=491147200"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -416,7 +416,7 @@
       "name": "Append row in sheet1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "id": ";iowvedoivp58svde",
           "name": "Google Sheets account 4"
         }
       }
@@ -468,17 +468,17 @@
       ],
       "id": "532af407-caae-4139-905d-5661c90fb01a",
       "name": "Send a photo message",
-      "webhookId": "YOUR_N8N_WEBHOOK_ID",
+      "webhookId": "3dcc29c1-9171-4186-8ffe-hi863hasf9yum",
       "credentials": {
         "telegramApi": {
-          "id": "YOUR_TELEGRAM_CREDENTIAL_ID",
+          "id": "egvdsvnonowv",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "const raw = $node[\"HTTP Request\"].json.choices[0].message.content;\n\nlet content = raw\n  .trim()\n  .replace(/^```json\\s*/i, \"\")\n  .replace(/^```\\s*/i, \"\")\n  .replace(/\\s*```$/i, \"\")\n  .trim();\n\nlet parsed;\n\ntry {\n  parsed = JSON.parse(content);\n} catch (error) {\n  const match = content.match(/\\{[\\s\\S]*\\}/);\n\n  if (!match) {\n    throw new Error(\"خروجی DeepSeek JSON معتبر نیست: \" + content);\n  }\n\n  parsed = JSON.parse(match[0]);\n}\n\nconst normalize = (text) => {\n  return String(text || \"\")\n    .replace(/[يى]/g, \"ی\")\n    .replace(/[ك]/g, \"ک\")\n    .replace(/‌/g, \"\")\n    .replace(/[^\\u0600-\\u06FFa-zA-Z0-9\\s]/g, \"\")\n    .replace(/\\s+/g, \" \")\n    .trim()\n    .toLowerCase();\n};\n\nconst newQuote = normalize(parsed.quote);\n\nconst rows = $input.all();\n\nlet maxSimilarity = 0;\nlet mostSimilarQuote = \"\";\n\nconst newWords = new Set(newQuote.split(\" \"));\n\nfor (const item of rows) {\n  const oldQuote = normalize(item.json[\"متن\"]);\n\n  if (!oldQuote) continue;\n\n  const oldWords = new Set(oldQuote.split(\" \"));\n\n  const intersection = [...newWords]\n    .filter(word => oldWords.has(word))\n    .length;\n\n  const union = new Set([\n    ...newWords,\n    ...oldWords\n  ]).size;\n\n  const similarity = union > 0\n    ? intersection / union\n    : 0;\n\n  if (similarity > maxSimilarity) {\n    maxSimilarity = similarity;\n    mostSimilarQuote = item.json[\"متن\"];\n  }\n}\n\nreturn [{\n  json: {\n    quote: parsed.quote,\n    author: parsed.author,\n    image_prompt: parsed.image_prompt || \"\",\n    نوع_پست: $node[\"Edit Fields1\"].json[\"نوع_پست\"],\n    similarity: Math.round(maxSimilarity * 100),\n    is_duplicate: maxSimilarity >= 0.75,\n    most_similar_quote: mostSimilarQuote\n  }\n}];"
+        "jsCode": "const raw = $node[\"HTTP Request\"].json.choices[0].message.content;\n\nlet content = raw\n  .trim()\n  .replace(/^```json\\s*/i, \"\")\n  .replace(/^```\\s*/i, \"\")\n  .replace(/\\s*```$/i, \"\")\n  .trim();\n\nlet parsed;\n\ntry {\n  parsed = JSON.parse(content);\n} catch (error) {\n  const match = content.match(/\\{[\\s\\S]*\\}/);\n\n  if (!match) {\n    throw new Error(\"خروجی DeepSeek JSON معتبر نیست: \" + content);\n  }\n\n  parsed = JSON.parse(match[0]);\n}\n\n// ------------------------------\n// نرمال‌سازی متن\n// ------------------------------\n\nconst normalize = (text) => {\n  return String(text || \"\")\n    .replace(/[يى]/g, \"ی\")\n    .replace(/[ك]/g, \"ک\")\n    .replace(/‌/g, \"\")\n    .replace(/[^\\u0600-\\u06FFa-zA-Z0-9\\s]/g, \"\")\n    .replace(/\\s+/g, \" \")\n    .trim()\n    .toLowerCase();\n};\n\nconst newQuote = normalize(parsed.quote);\nconst newAuthor = normalize(parsed.author);\n\nconst rows = $input.all();\n\n// ------------------------------\n// بررسی شباهت نقل‌قول\n// ------------------------------\n\nlet maxSimilarity = 0;\nlet mostSimilarQuote = \"\";\n\nconst newWords = new Set(\n  newQuote\n    .split(\" \")\n    .filter(word => word.length > 0)\n);\n\nfor (const item of rows) {\n\n  const oldQuote = normalize(item.json[\"متن\"]);\n\n  if (!oldQuote) continue;\n\n  const oldWords = new Set(\n    oldQuote\n      .split(\" \")\n      .filter(word => word.length > 0)\n  );\n\n  const intersection = [...newWords]\n    .filter(word => oldWords.has(word))\n    .length;\n\n  const union = new Set([\n    ...newWords,\n    ...oldWords\n  ]).size;\n\n  const similarity = union > 0\n    ? intersection / union\n    : 0;\n\n  if (similarity > maxSimilarity) {\n    maxSimilarity = similarity;\n    mostSimilarQuote = item.json[\"متن\"];\n  }\n}\n\n// ------------------------------\n// بررسی گوینده در 10 رکورد آخر\n// ------------------------------\n\nconst recentRows = rows.slice(-10);\n\nlet isAuthorDuplicate = false;\nlet repeatedAuthor = \"\";\n\nfor (const item of recentRows) {\n\n  const oldAuthor = normalize(item.json[\"گوینده\"]);\n\n  if (!oldAuthor || !newAuthor) continue;\n\n  if (oldAuthor === newAuthor) {\n    isAuthorDuplicate = true;\n    repeatedAuthor = item.json[\"گوینده\"];\n    break;\n  }\n}\n\n// ------------------------------\n// نتیجه نهایی\n// ------------------------------\n\n// 50 درصد یا بیشتر = تکراری\nconst isQuoteDuplicate = maxSimilarity >= 0.50;\n\n// اگر متن تکراری باشد\n// یا گوینده در 10 رکورد اخیر وجود داشته باشد\n// کل خروجی رد می‌شود\nconst isDuplicate =\n  isQuoteDuplicate || isAuthorDuplicate;\n\n// ------------------------------\n// خروجی\n// ------------------------------\n\nreturn [{\n  json: {\n    quote: parsed.quote,\n    author: parsed.author,\n    image_prompt: parsed.image_prompt || \"\",\n\n    نوع_پست: $node[\"Edit Fields1\"].json[\"نوع_پست\"],\n\n    similarity: Math.round(maxSimilarity * 100),\n\n    is_duplicate: isDuplicate,\n\n    is_quote_duplicate: isQuoteDuplicate,\n\n    is_author_duplicate: isAuthorDuplicate,\n\n    repeated_author: repeatedAuthor,\n\n    most_similar_quote: mostSimilarQuote\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -671,7 +671,11 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "8586adb5-25b5-4556-b5be-ab9744736ce2",
+  "versionId": "c5e46ee7-53f8-4a4c-b634-f93fda91ce0f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b31c7c0fe261b085d27d7ae21fa163cb11ed1ac7fd603cb877e6d3f6a8399272"
+  },
   "nodeGroups": [],
   "id": "XNa92jcDKEC0XdLy",
   "tags": []
