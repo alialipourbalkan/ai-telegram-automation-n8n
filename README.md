@@ -1,7 +1,6 @@
 # AI-Powered Telegram Content Automation
 
-<p align="center">
-  <img src="workflow/telegram-automation.png" alt="n8n Workflow" width="900">
+
 </p>
 
 <p align="center">
