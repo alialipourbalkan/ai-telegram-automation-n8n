@@ -1,25 +1,18 @@
-# AI-Powered Telegram Content Automation
-
-
-</p>
+ <img width="1420" height="554" alt="telegram-automation" src="https://github.com/user-attachments/assets/c849db1f-38a7-4b4d-8284-f06ea32f9088" />AI-Powered Telegram Content Automation
 
 <p align="center">
-  <strong>AI-powered automated content generation and publishing system for Telegram</strong>
-</p>
-
-<p align="center">
+  <strong>AI-powered automated content generation, image generation, archiving, and publishing system for Telegram</strong>
+</p><p align="center">
   <a href="https://t.me/outstandingwords">📢 Telegram Channel</a>
-</p>
+</p>---
 
----
+Overview
 
-## Overview
+An AI-powered Telegram content automation system built with n8n, DeepSeek, Google Sheets, Z-Image, Google Drive, and Telegram Bot API.
 
-An AI-powered Telegram content automation system built with n8n, DeepSeek, Google Sheets, Z-Image, and Telegram Bot API.
+This project automates the complete content production and publishing pipeline for a Persian Telegram channel. It generates meaningful content, checks for duplicate or highly similar posts, generates contextual AI images when required, archives generated images in Google Drive, stores publishing history, and automatically publishes the final content to Telegram.
 
-This project automates the complete content production and publishing pipeline for a Persian Telegram channel. It generates meaningful content, checks for duplicate or highly similar posts, generates contextual AI images when required, stores publishing history, and automatically publishes the final content to Telegram.
-
-## Features
+Features
 
 - AI-powered Persian content generation
 - Automated Telegram publishing
@@ -31,24 +24,24 @@ This project automates the complete content production and publishing pipeline f
 - Google Sheets publishing database
 - Context-aware AI image generation
 - Dynamic image prompts
+- Automatic image archiving in Google Drive
 - Automatic regeneration of rejected content
 - Structured JSON output
 - Custom JavaScript workflow logic
 
-## Content Strategy
+Content Strategy
 
 The system uses a diversified content strategy instead of generating only generic motivational quotes.
 
 Target content distribution:
 
-| Content Type | Target |
-|---|---:|
-| Famous quotes | 35% |
-| Book excerpts | 15% |
-| Movie / TV dialogues | 15% |
-| Poetry | 15% |
-| Debates / speeches / conversations | 10% |
-| Songs / lyrics | 10% |
+Content Type| Target
+Famous quotes| 35%
+Book excerpts| 15%
+Movie / TV dialogues| 15%
+Poetry| 15%
+Debates / speeches / conversations| 10%
+Songs / lyrics| 10%
 
 The generated content focuses on meaningful and thought-provoking themes such as:
 
@@ -70,41 +63,69 @@ The generated content focuses on meaningful and thought-provoking themes such as
 
 The maximum generated content length is 65 words.
 
-## Workflow Architecture
+Workflow Architecture
 
 The workflow follows this general architecture:
 
-Schedule Trigger → Edit Fields → DeepSeek → Google Sheets → Check Similarity → Duplicate Decision → Post Type Decision → Image/Text Branch → Telegram
+Schedule Trigger
+       ↓
+Edit Fields
+       ↓
+DeepSeek
+       ↓
+Google Sheets
+       ↓
+Check Similarity
+       ↓
+Duplicate Decision
+       ↓
+Post Type Decision
+       ↓
+   ┌───┴───────────┐
+   ↓               ↓
+Text Branch    Image Branch
+   ↓               ↓
+Telegram       Z-Image
+                   ↓
+            ┌──────┴──────┐
+            ↓             ↓
+      Google Sheets   Google Drive
+            ↓
+         Telegram
+
+The image branch generates an AI image and then splits into two paths:
+
+1. The existing publishing path continues through Google Sheets and Telegram.
+2. A parallel path downloads the generated image and uploads it to Google Drive for automatic archiving.
 
 If the generated content is considered a duplicate, the workflow returns to DeepSeek and generates new content.
 
-## Publishing Schedule
+Publishing Schedule
 
 The system publishes five posts per day.
 
-| Time | Post Type |
-|---|---|
-| 08:00 | Image |
-| 12:00 | Text |
-| 15:30 | Text |
-| 18:30 | Image |
-| 21:30 | Text |
+Time| Post Type
+08:00| Image
+12:00| Text
+15:30| Text
+18:30| Image
+21:30| Text
 
 The post type is automatically determined from the scheduled execution time.
 
-## Technology Stack
+Technology Stack
 
-| Technology | Purpose |
-|---|---|
-| n8n | Workflow automation |
-| DeepSeek | AI content generation |
-| GapGPT API | API gateway |
-| Google Sheets | Publishing history |
-| Z-Image | AI image generation |
-| Telegram Bot API | Content distribution |
-| JavaScript | Similarity detection and workflow logic |
+Technology| Purpose
+n8n| Workflow automation
+DeepSeek| AI content generation
+GapGPT API| API gateway
+Google Sheets| Publishing history
+Z-Image| AI image generation
+Google Drive| Generated image archiving
+Telegram Bot API| Content distribution
+JavaScript| Similarity detection and workflow logic
 
-## DeepSeek
+DeepSeek
 
 DeepSeek is responsible for generating and structuring the content.
 
@@ -127,25 +148,25 @@ Expected output structure:
   "image_prompt": "English image generation prompt"
 }
 
-For text posts, the image_prompt field is returned as an empty string.
+For text posts, the "image_prompt" field is returned as an empty string.
 
-## Google Sheets Database
+Google Sheets Database
 
 Google Sheets is used as the publishing history database.
 
-The database stores previously published content.
+The database stores pr
+[9/8/2026 3:47 PM] Ali Alipour: eviously published content.
 
 Example structure:
 
-| Column | Description |
-|---|---|
-| متن | Published content |
-| گوینده | Author or source |
-| تاریخ | Publishing date |
+Column| Description
+متن| Published content
+گوینده| Author or source
+تاریخ| Publishing date
 
 The database allows the workflow to compare newly generated content with previously published content.
 
-## Duplicate Detection
+Duplicate Detection
 
 Before publication, the generated content is passed through a custom JavaScript similarity checker.
 
@@ -156,9 +177,7 @@ The process:
 3. Remove unnecessary punctuation.
 4. Normalize whitespace.
 5. Compare the new content against stored content.
-6. Calcu
-
-late similarity.
+6. Calculate similarity.
 7. Check recent author usage.
 8. Decide whether the generated content should be accepted or rejected.
 
@@ -166,7 +185,7 @@ The current target similarity threshold is 90%.
 
 If the similarity reaches or exceeds the configured threshold, the content is rejected and regenerated.
 
-## Author Diversity
+Author Diversity
 
 The system does not permanently ban authors.
 
@@ -176,7 +195,7 @@ For example, an author may appear again after enough other posts have been publi
 
 This allows the system to maintain variety while still allowing important authors and sources to return naturally.
 
-## Post Type Detection
+Post Type Detection
 
 The workflow automatically determines whether a post should be an image or text post.
 
@@ -192,7 +211,7 @@ This means:
 - 15:30 → Text
 - 21:30 → Text
 
-## AI Image Generation
+AI Image Generation
 
 For image posts, DeepSeek generates a dedicated English image prompt based on the meaning and emotional context of the selected content.
 
@@ -213,7 +232,7 @@ It can describe:
 
 The generated prompt is then passed directly to Z-Image.
 
-## Image Generation Requirements
+Image Generation Requirements
 
 The image-generation prompt is designed to produce:
 
@@ -239,20 +258,43 @@ The prompt also instructs the image model to avoid:
 - Random scenery
 - Artificial-looking AI elements
 
-## Z-Image
+Z-Image
 
 The image generation system uses Z-Image through the configured API.
 
 Configuration:
 
-- Model: gapgpt/z-image
-- Resolution: 1024x1024
+- Model: "gapgpt/z-image"
+- Resolution: "1024x1024"
 
 The image prompt is passed dynamically from the DeepSeek result rather than using a fixed prompt.
 
 This allows every generated image to be visually related to its corresponding content.
 
-## Telegram Publishing
+Google Drive Image Archiving
+
+Generated images are automatically archived in Google Drive.
+
+After Z-Image generates an image, the workflow creates two paths:
+
+Z-Image
+   ↓
+Generated Image URL
+   ├──→ Publishing Pipeline → Telegram
+   │
+   └──→ HTTP Request → Download Image
+                         ↓
+                    Google Drive
+                         ↓
+                    Image Archive
+
+The second path downloads the generated image as binary data and uploads it to the configured Google Drive folder.
+
+This provides a persistent archive of generated visual content independently from the Telegram publishing process.
+
+The image files are automatically named using the workflow execution timestamp.
+
+Telegram Publishing
 
 After content generation and validation, the workflow automatically publishes the result to the configured Telegram channel.
 
@@ -260,23 +302,32 @@ Text posts contain the generated content and relevant hashtags.
 
 Image posts contain the generated image together with the related content.
 
-## Regeneration Logic
+Regeneration Logic
 
 The workflow contains an automatic regeneration loop.
 
 If the similarity checker determines that the generated content should be rejected:
 
-Duplicate → DeepSeek → Generate New Content → Similarity Check
+Duplicate
+   ↓
+DeepSeek
+   ↓
+Generate New Content
+   ↓
+Similarity Check
 
 If the content passes validation:
-
-Duplicate = False → Continue → Publish
+[9/8/2026 3:47 PM] Ali Alipour: Duplicate = False
+       ↓
+Continue
+       ↓
+Publish
 
 This creates an automated quality-control layer before publication.
 
-## Installation
+Installation
 
-### Requirements
+Requirements
 
 You need:
 
@@ -286,15 +337,16 @@ You need:
 - Telegram Channel
 - Google account
 - Google Sheets
+- Google Drive
 - Z-Image API access
 
-### Import the Workflow
+Import the Workflow
 
 Import the provided n8n workflow JSON into your n8n instance.
 
 Then configure the required credentials and connections.
 
-### Configure DeepSeek
+Configure DeepSeek
 
 Configure the DeepSeek HTTP Request node with the required API credentials.
 
@@ -302,7 +354,7 @@ Current model:
 
 deepseek-v4-flash
 
-### Configure Google Sheets
+Configure Google Sheets
 
 Create a spreadsheet containing the publishing history.
 
@@ -312,7 +364,20 @@ Recommended columns:
 
 Connect the Google Sheets credential to n8n.
 
-### Configure Telegram
+Configure Google Drive
+
+Connect your Google Drive account to n8n.
+
+Configure the Google Drive node to:
+
+- Upload files
+- Use the binary image data from the preceding HTTP Request node
+- Select the desired destination folder
+- Store generated images in the selected folder
+
+The image archive branch should receive the generated image URL from the Z-Image response and download it as binary data before uploading it to Google Drive.
+
+Configure Telegram
 
 Create a Telegram bot using BotFather.
 
@@ -320,7 +385,7 @@ Add the bot as an administrator of the target Telegram channel.
 
 Configure the Telegram nodes with the appropriate credentials and channel identifier.
 
-### Configure Z-Image
+Configure Z-Image
 
 Configure the image-generation HTTP Request node.
 
@@ -328,13 +393,11 @@ The image prompt must be received dynamically from the DeepSeek output.
 
 Do not replace the dynamic image prompt with a static prompt.
 
-## Security
+Security
 
 Never commit API keys, bot tokens, or private credentials to GitHub.
 
-Before committing an
-
-exported n8n workflow:
+Before committing an exported n8n workflow:
 
 - Remove API keys
 - Remove Telegram bot tokens
@@ -345,7 +408,7 @@ exported n8n workflow:
 
 Never publish real credentials inside the repository.
 
-## Project Structure
+Project Structure
 
 The repository can be organized as follows:
 
@@ -356,13 +419,13 @@ ai-telegram-automation-n8n/
 ├── docs/
 │   └── architecture.md
 └── screenshots/
-    └── workflow.png
+    └── telegram-automation.png
 
 The repository structure may evolve as the project develops.
 
-## Current Status
+Current Status
 
-### Completed
+Completed
 
 - [x] Telegram bot configuration
 - [x] Telegram channel integration
@@ -376,8 +439,9 @@ The repository structure may evolve as the project develops.
 - [x] Dynamic image prompts
 - [x] Telegram publishing
 - [x] Automatic regeneration logic
+- [x] Google Drive image archiving
 
-### Planned Improvements
+Planned Improvements
 
 - [ ] Advanced semantic similarity detection
 - [ ] Improved author rotation
@@ -388,9 +452,9 @@ The repository structure may evolve as the project develops.
 - [ ] Production monitoring
 - [ ] Automatic performance analysis
 
-## Future Improvements
+Future Improvements
 
-### Semantic Similarity
+Semantic Similarity
 
 The current similarity system uses word-based comparison.
 
@@ -402,17 +466,17 @@ Potential technologies include:
 - Embedding APIs
 - Vector databases
 
-### Source Verification
+Source Verification
 
 A future version could introduce an external verification layer to reduce incorrectly attributed quotations, dialogues, literary excerpts, and historical statements.
 
-### Smarter Author Rotation
+Smarter Author Rotation
 
 The author diversity system can be improved using a configurable rolling history.
 
 This would allow the system to dynamically determine which authors have appeared recently and prioritize less recently used sources.
 
-### Content Quality Scoring
+Content Quality Scoring
 
 Each generated post could receive scores for:
 
@@ -425,7 +489,7 @@ Each generated post could receive scores for:
 
 Only content above a configurable quality threshold would be published.
 
-### Analytics
+Analytics
 
 Future versions could collect:
 
@@ -434,12 +498,13 @@ Future versions could collect:
 - Shares
 - Engagement rate
 - Best-performing content types
-- Best-performing authors
+- Best-performing au
+[9/8/2026 3:47 PM] Ali Alipour: thors
 - Best publishing times
 
 The collected data could eventually be used to automatically optimize the publishing strategy.
 
-## Learning Objectives
+Learning Objectives
 
 This project serves as a practical learning project covering:
 
@@ -454,20 +519,21 @@ This project serves as a practical learning project covering:
 - Conditional workflows
 - Error handling
 - AI image generation
+- Google Drive integration
 - Telegram automation
 - System architecture
 
-## Why This Project?
+Why This Project?
 
 This project demonstrates how multiple AI and automation technologies can be combined into a practical autonomous content pipeline.
 
 The core architecture combines:
 
-AI Generation + Quality Control + Data Storage + AI Image Generation + Automation + Distribution
+AI Generation + Quality Control + Data Storage + AI Image Generation + Image Archiving + Automation + Distribution
 
-The result is a system capable of generating, validating, enriching, and publishing content with minimal manual intervention.
+The result is a system capable of generating, validating, enriching, archiving, and publishing content with minimal manual intervention.
 
-## Disclaimer
+Disclaimer
 
 AI-generated content may contain factual or attribution errors.
 
@@ -477,16 +543,14 @@ Important quotations, literary excerpts, movie dialogues, lyrics, and historical
 
 Copyright restrictions may apply to books, movies, songs, and other copyrighted works. The project should be operated in accordance with applicable laws and platform policies.
 
-## Author
+Author
 
 Built as an independent AI and automation engineering project.
 
 AI + Automation + APIs + Data + Content Distribution
 
-## License
+License
 
 This project is provided for educational and portfolio purposes.
 
-If an open-source license is added to the rep
-
-ository, this section should be updated accordingly.
+If an open-source license is added to the repository, this section should be updated accordingly.
