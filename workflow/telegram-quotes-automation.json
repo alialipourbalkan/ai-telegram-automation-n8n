@@ -6,14 +6,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 8
-            },
-            {
               "triggerAtHour": 12
-            },
-            {
-              "triggerAtHour": 18,
-              "triggerAtMinute": 30
             },
             {
               "triggerAtHour": 21,
@@ -22,6 +15,13 @@
             {
               "triggerAtHour": 15,
               "triggerAtMinute": 30
+            },
+            {
+              "triggerAtHour": 8
+            },
+            {
+              "triggerAtHour": 18,
+              "triggerAtMinute": 30
             }
           ]
         }
@@ -29,10 +29,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -64,
-        0
+        -1392,
+        144
       ],
-      "id": "80c79c42-6044-4b33-a1d6-1cf04718f744",
+      "id": "5701cc15-f0cd-4f66-95fb-f1871e370a5b",
       "name": "Schedule Trigger"
     },
     {
@@ -47,15 +47,15 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1712,
-        240
+        320,
+        256
       ],
-      "id": "f715f00f-d449-4a4d-a3d0-9b15625bf856",
+      "id": "33a4c362-de03-49e7-a9df-cff0e95dc55a",
       "name": "Send a text message",
       "webhookId": "3dcc29c1-9171-4186-8ffe-f2a9a9a47217",
       "credentials": {
         "telegramApi": {
-          "id": "mwbsni psvd",
+          "id": "lakjvdnsdv",
           "name": "Telegram account"
         }
       }
@@ -69,7 +69,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer sk-*******************************************"
+              "value": "Bearer sk-GV5teB8ROaQ18B2KSvHOE***************"
             },
             {
               "name": "Content-Type",
@@ -79,7 +79,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"model\": \"deepseek-v4-flash\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"تو مسئول تولید محتوای کانال فارسی «سخن بزرگان» هستی.\\n\\nنوع پست موردنظر:\\n{{ $node[\\\"Edit Fields1\\\"].json[\\\"نوع_پست\\\"] }}\\n\\nیک محتوای واقعی، معتبر، دقیق و قابل استناد انتخاب کن.\\n\\nتوزیع تقریبی نوع محتوا:\\n35 درصد نقل قول واقعی از شخصیت های شناخته شده\\n15 درصد بخش کوتاه و واقعی از کتاب ها و آثار ادبی معتبر\\n15 درصد دیالوگ واقعی و معنادار از فیلم ها یا سریال های معروف\\n15 درصد شعر یا بیت واقعی و معنادار از شاعران ایرانی یا خارجی\\n10 درصد بخش کوتاه و واقعی از مناظره ها، گفتگوها یا سخنرانی های مشهور\\n10 درصد بخش کوتاه و واقعی از ترانه ها و آهنگ های اصیل و شناخته شده\\n\\nموضوعات پیشنهادی شامل عشق، خدا، انسان، زندگی، مرگ، تنهایی، آزادی، امید، فلسفه، حماسه، رنج، انتخاب، شکست، پیروزی، زمان و دیگر مفاهیم عمیق انسانی هستند.\\n\\nمحتوا نباید فقط حرف انگیزشی و کلیشه ای باشد.\\nاولویت با محتواهای خاص، عمیق، احساسی، تاثیرگذار، ماندگار و جذاب برای عموم مردم است.\\n\\nقوانین اصلی:\\n- فقط محتوای واقعی و معتبر انتخاب کن.\\n- هیچ جمله، شعر، دیالوگ، متن کتاب یا ترانه ای را از خودت نساز.\\n- محتوا را بازنویسی یا تغییر نده.\\n- متن انتخاب شده را تا حد امکان به شکل اصلی خود ارائه کن.\\n- حداکثر طول محتوا 65 کلمه باشد.\\n- محتوای سطحی و کلیشه ای انتخاب نکن.\\n- از جملات بسیار معروف و مصرف شده تا حد امکان دوری کن.\\n- اگر درباره صحت محتوا یا انتساب آن مطمئن نیستی، آن را انتخاب نکن.\\n- تنوع بسیار مهم است.\\n- یک شخص یا منبع را پشت سر هم انتخاب نکن.\\n- فقط به بودا، مولانا، نیچه، انیشتین، حافظ و چند شخصیت معروف دیگر محدود نشو.\\n- از نویسندگان، شاعران، فیلسوفان، دانشمندان، هنرمندان، شخصیت های تاریخی و دیگر افراد معتبر تنوع ایجاد کن.\\n\\nبرای کتاب:\\nیک بخش کوتاه و واقعی از یک کتاب معتبر انتخاب کن و نویسنده را مشخص کن.\\n\\nبرای فیلم و سریال:\\nیک دیالوگ واقعی، معروف و معنادار انتخاب کن.\\nدیالوگ نباید ساخته مدل باشد.\\nنام گوینده و اثر را مشخص کن.\\n\\nبرای شعر:\\nیک شعر یا بیت واقعی و معنادار انتخاب کن.\\nموضوعات عاشقانه، عرفانی، حماسی و فلسفی مناسب هستند.\\nنام شاعر را دقیق مشخص کن.\\n\\nبرای مناظره و گفتگو:\\nیک بخش واقعی و قابل انتساب انتخاب کن که ارزش فکری یا احساسی داشته باشد.\\n\\nبرای ترانه:\\nیک بخش کوتاه و واقعی و معنادار از یک ترانه اصیل انتخاب کن.\\nموضوعاتی مانند عشق، تنهایی، انسان، خدا، وطن و احساسات عمیق انسانی مناسب هستند.\\nنام خواننده یا ترانه سرا را مشخص کن.\\n\\nقوانین تکراری نبودن:\\n- محتوای انتخاب شده نباید با محتوای قبلی یکسان یا بسیار مشابه باشد.\\n- اگر چند گزینه معتبر داری، خاص ترین و کمتر کلیشه ای ترین گزینه را انتخاب کن.\\n- تنوع افراد و منابع را در اولویت قرار بده.\\n\\nاگر نوع پست تصویری است:\\nبرای همان محتوا یک image_prompt حرفه ای به زبان انگلیسی تولید کن.\\n\\nتصویر باید مستقیما با مفهوم محتوا ارتباط داشته باشد.\\nابتدا مفهوم و احساس اصلی محتوا را در نظر بگیر و سپس یک صحنه واقعی و قابل مشاهده طراحی کن.\\nاز تصویر عمومی، منظره تصادفی، پرتره بی ربط یا تصویر زیبای بدون ارتباط با محتوا استفاده نکن.\\n\\nimage_prompt باید شامل این ویژگی ها باشد:\\nultra-realistic\\nphotorealistic\\ncinematic composition\\nnatural realistic lighting\\nphysically accurate human anatomy\\nrealistic skin and clothing\\nrealistic environmental details\\nrealistic depth of field\\nemotionally powerful\\nvisually clear storytelling\\ndirectly related to the meaning of the content\\nno generic stock photo feeling\\nno unrelated objects\\nno text\\nno typography\\nno captions\\nno logo\\nno watermark\\nno artificial AI look\\n\\nاگر نوع پست متنی است، image_prompt باید دقیقا رشته خالی باشد.\\n\\nخروجی فقط JSON معتبر باشد.\\nهیچ متن دیگری خارج از JSON تولید نکن.\\n\\nساختار خروجی دقیقا این باشد:\\n{\\n  \\\"quote\\\": \\\"متن کامل و دقیق محتوای انتخاب شده\\\",\\n  \\\"author\\\": \\\"نام دقیق گوینده یا نویسنده یا شاعر یا منبع\\\",\\n  \\\"image_prompt\\\": \\\"پرامپت دقیق تصویر به زبان انگلیسی یا رشته خالی\\\"\\n}\"\n    }\n  ],\n  \"response_format\": {\n    \"type\": \"json_object\"\n  }\n}",
+        "jsonBody": "{\n  \"model\": \"deepseek-v4-flash\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"تو مسئول تولید محتوای کانال فارسی «سخن بزرگان» هستی.\\n\\nنوع پست موردنظر:\\n{{ $node[\\\"Edit Fields1\\\"].json[\\\"نوع_پست\\\"] }}\\n\\nیک محتوای واقعی، معتبر، دقیق و قابل استناد انتخاب کن.\\n\\nتوزیع تقریبی نوع محتوا:\\n35 درصد نقل قول واقعی از شخصیت های شناخته شده\\n15 درصد بخش کوتاه و واقعی از کتاب ها و آثار ادبی معتبر\\n15  حتما به زبان فارسی باشد درصد دیالوگ واقعی و معنادار از فیلم ها یا سریال های معروف\\n15 درصد شعر یا بیت واقعی و معنادار از شاعران ایرانی یا خارجی\\n10 درصد بخش کوتاه و واقعی از مناظره ها، گفتگوها یا سخنرانی های مشهور\\n10 درصد بخش کوتاه و واقعی از ترانه ها و آهنگ های اصیل و شناخته شده\\n\\nموضوعات پیشنهادی شامل عشق، خدا، انسان، زندگی، مرگ، تنهایی، آزادی، امید، فلسفه، حماسه، رنج، انتخاب، شکست، پیروزی، زمان و دیگر مفاهیم عمیق انسانی هستند.\\n\\nمحتوا نباید فقط حرف انگیزشی و کلیشه ای باشد.\\nاولویت با محتواهای خاص، عمیق، احساسی، تاثیرگذار، ماندگار و جذاب برای عموم مردم است.\\n\\nقوانین اصلی:\\n- فقط محتوای واقعی و معتبر انتخاب کن.\\n- هیچ جمله، شعر، دیالوگ، متن کتاب یا ترانه ای را از خودت نساز.\\n- محتوا را بازنویسی یا تغییر نده.\\n- متن انتخاب شده را تا حد امکان به شکل اصلی خود ارائه کن.\\n- حداکثر طول محتوا 65 کلمه باشد.\\n- محتوای سطحی و کلیشه ای انتخاب نکن.\\n- از جملات بسیار معروف و مصرف شده تا حد امکان دوری کن.\\n- اگر درباره صحت محتوا یا انتساب آن مطمئن نیستی، آن را انتخاب نکن.\\n- تنوع بسیار مهم است.\\n- یک شخص یا منبع را پشت سر هم انتخاب نکن.\\n- فقط به بودا، مولانا، نیچه، انیشتین، حافظ و چند شخصیت معروف دیگر محدود نشو.\\n- از نویسندگان، شاعران، فیلسوفان، دانشمندان، هنرمندان، شخصیت های تاریخی و دیگر افراد معتبر تنوع ایجاد کن.\\n\\nبرای کتاب:\\nیک بخش کوتاه و واقعی از یک کتاب معتبر انتخاب کن و نویسنده را مشخص کن.\\n\\nبرای فیلم و سریال:\\nیک دیالوگ واقعی، معروف و معنادار انتخاب کن.\\nدیالوگ نباید ساخته مدل باشد.\\nنام گوینده و اثر را مشخص کن.\\n\\nبرای شعر:\\nیک شعر یا بیت واقعی و معنادار انتخاب کن.\\nموضوعات عاشقانه، عرفانی، حماسی و فلسفی مناسب هستند.\\nنام شاعر را دقیق مشخص کن.\\n\\nبرای مناظره و گفتگو:\\nیک بخش واقعی و قابل انتساب انتخاب کن که ارزش فکری یا احساسی داشته باشد.\\n\\nبرای ��رانه:\\nیک بخش کوتاه و واقعی و معنادار از یک ترانه اصیل انتخاب کن.\\nموضوعاتی مانند عشق، تنهایی، انسان، خدا، وطن و احساسات عمیق انسانی مناسب هستند.\\nنام خواننده یا ترانه سرا را مشخص کن.\\n\\nقوانین تکراری نبودن:\\n- محتوای انتخاب شده نباید با محتوای قبلی یکسان یا بسیار مشابه باشد.\\n- اگر چند گزینه معتبر داری، خاص ترین و کمتر کلیشه ای ترین گزینه را انتخاب کن.\\n- تنوع افراد و منابع را در اولویت قرار نقل و قول ها دقیق دقیق دقیق باشه اصلا حرف اشتباهی نمیخوام تولید بشه اگر 1 درصد هم در مورد صحتش شک داشتی تولیدش نکن بده.\\n\\nاگر نوع پست تصویری است:\\nبرای همان محتوا یک image_prompt حرفه ای به زبان انگلیسی تولید کن.\\n\\nتصویر باید مستقیما با مفهوم محتوا ارتباط داشته باشد.\\nابتدا مفهوم و احساس اصلی محتوا را در نظر بگیر و سپس یک صحنه واقعی و قابل مشاهده طراحی کن.\\nاز تصویر عمومی، منظره تصادفی، پرتره بی ربط یا تصویر زیبای بدون ارتباط با محتوا استفاده نکن.\\n\\nimage_prompt باید شامل این ویژگی ها باشد پرامپت دقیقا حس و حال اون نقل و قول رو برگردونه نه چیزهای فی البداهه این پرامپت برای هوش مصنوعی z-imageهست که کمی باید نیازمند پرامپت خیلی خیلی دقیق هست پس با تمام دقت بنویسش اگر مرتبط با انسان نبود نیازی نیست عکس انسان هم توش باشه عکس پیچیده و پربار و با مفهوم عمیق رو بگ.:\\nultra-realistic\\nphotorealistic\\ncinematic composition\\nnatural realistic lighting\\nphysically accurate human anatomy\\nrealistic skin and clothing\\nrealistic environmental details\\nrealistic depth of field\\nemotionally powerful\\nvisually clear storytelling\\ndirectly related to the meaning of the content\\nno generic stock photo feeling\\nno unrelated objects\\nno text\\nno typography\\nno captions\\nno logo\\nno watermark\\nno artificial AI look\\n\\nاگر نوع پست متنی است، image_prompt باید دقیقا رشته خالی باشد.\\n\\nخروجی فقط JSON معتبر باشد.\\nهیچ متن دیگری خارج از JSON تولید نکن.\\n\\nساختار خروجی دقیقا این باشد:\\n{\\n  \\\"quote\\\": \\\"متن کامل و دقیق محتوای انتخاب شده\\\",\\n  \\\"author\\\": \\\"نام دقیق گوینده یا نویسنده یا شاعر یا منبع\\\",\\n  \\\"image_prompt\\\": \\\"پرامپت دقیق تصویر به زبان انگلیسی یا رشته خالی\\\"\\n}\"\n    }\n  ],\n  \"response_format\": {\n    \"type\": \"json_object\"\n  }\n}",
         "options": {
           "timeout": 120000
         }
@@ -87,10 +87,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        336,
-        0
+        -992,
+        144
       ],
-      "id": "357ed1f0-5239-47f0-b130-1fb30696b338",
+      "id": "1bde22ef-c23f-4b35-b1fb-dushusvhn",
       "name": "HTTP Request"
     },
     {
@@ -98,14 +98,14 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw",
+          "value": "1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpkior",
           "mode": "list",
           "cachedResultName": "Telegram Quotes Database",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
-          "value": 491147200,
+          "value": 491147150,
           "mode": "list",
           "cachedResultName": "Quotes",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zY-H6xWTEAWaaNmhjn4lDK0a-Okulom1Q3dvkpyrmlw/edit#gid=491147200"
@@ -155,15 +155,15 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1296,
-        272
+        0,
+        256
       ],
-      "id": "06748856-0efc-4f15-9279-f4248c7cfd25",
+      "id": "14663592-984c-4c36-a34e-6483b75f230e",
       "name": "Append row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "aFtryukiu",
-          "name": "Google Sheets account 4"
+          "id": "KdewCftmNO7fopku",
+          "name": "Google Sheets account"
         }
       }
     },
@@ -189,16 +189,16 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        512,
-        0
+        -816,
+        144
       ],
-      "id": "b51d1414-9726-4150-93d7-2687695d7ce0",
+      "id": "fcd20350-2fea-4754-8294-fbe4a360366d",
       "name": "Get row(s) in sheet",
       "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "efawegthryjtuykiu",
-          "name": "Google Sheets account 4"
+          "id": "KdewCftmNO7fomyL",
+          "name": "Google Sheets account"
         }
       }
     },
@@ -230,10 +230,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        864,
-        0
+        -480,
+        144
       ],
-      "id": "ac9a60be-d6d7-45e2-bf79-8f2a03b58f4a",
+      "id": "ddf61cd3-cf9c-47d7-88f3-f1761ff10680",
       "name": "If"
     },
     {
@@ -253,10 +253,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        1488,
-        272
+        160,
+        256
       ],
-      "id": "029c8af6-50c3-4fa5-b010-7a169a7b87d7",
+      "id": "91da549f-9e7a-4c6e-a55c-546d60d857ac",
       "name": "Edit Fields"
     },
     {
@@ -266,7 +266,7 @@
             {
               "id": "fa47a03b-e82f-46c8-9585-531612429168",
               "name": "=نوع_پست",
-              "value": "={{ [8, 18].includes($now.hour) ? \"تصویری\" : \"متنی\" }}",
+              "value": "={{[12 , 18].includes($now.hour) ? \"تصویری\" : \"متنی\" }}",
               "type": "string"
             }
           ]
@@ -276,10 +276,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        128,
-        0
+        -1200,
+        144
       ],
-      "id": "9f0241ea-f831-4407-bc7d-1dc45426ba23",
+      "id": "9213d799-0507-4290-8bef-956e1eb7189e",
       "name": "Edit Fields1"
     },
     {
@@ -310,10 +310,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        1056,
-        272
+        -224,
+        160
       ],
-      "id": "186eddb4-af5f-4b84-b598-e8d8db17e9db",
+      "id": "088264b1-cf93-4dca-bab5-fd92aedaed24",
       "name": "If1"
     },
     {
@@ -325,7 +325,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer sk-**************************************"
+              "value": "Bearer sk-GV5teB8ROaQ18B2KSvHOEVqwDvs79iIHoyhsigyutfyrdtfygh"
             },
             {
               "name": "Content-Type",
@@ -335,16 +335,16 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"gapgpt/z-image\",\n  \"prompt\": \"{{ $json.image_prompt }}\",\n  \"size\": \"1024x1024\"\n}",
+        "jsonBody": "={\n  \"model\": \"gapgpt/z-image\",\n  \"prompt\": \"{{ $json.image_prompt}}\",\n  \"size\": \"1024x1024\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        1152,
-        -48
+        0,
+        0
       ],
-      "id": "439a57fa-b3b0-4b88-bfb6-a30ed78cc0a2",
+      "id": "5718e645-4550-4129-aa6d-66954ed2133d",
       "name": "HTTP Request1"
     },
     {
@@ -409,15 +409,15 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1344,
-        -32
+        160,
+        0
       ],
-      "id": "909ddf05-37be-418b-9537-79db1dc3053b",
+      "id": "eb52b7b3-d1fb-408d-9170-df3f71599832",
       "name": "Append row in sheet1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": ";iowvedoivp58svde",
-          "name": "Google Sheets account 4"
+          "id": "KdewCftmNO7opljL",
+          "name": "Google Sheets account"
         }
       }
     },
@@ -444,10 +444,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        1504,
-        -32
+        320,
+        0
       ],
-      "id": "a59a9a87-4a5a-484e-a4b7-b35c960626bb",
+      "id": "4ba39044-c25e-4c20-9521-92d224c93e29",
       "name": "Edit Fields2"
     },
     {
@@ -463,15 +463,15 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1664,
-        -32
+        480,
+        0
       ],
-      "id": "532af407-caae-4139-905d-5661c90fb01a",
+      "id": "f834be09-439d-4ba4-8103-d530830af8c8",
       "name": "Send a photo message",
-      "webhookId": "3dcc29c1-9171-4186-8ffe-hi863hasf9yum",
+      "webhookId": "3dcc29c1-9171-4186-8ffe-f2a9a9a47217",
       "credentials": {
         "telegramApi": {
-          "id": "egvdsvnonowv",
+          "id": "qcR4TUzRJZMoiugty",
           "name": "Telegram account"
         }
       }
@@ -483,11 +483,65 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        0
+        -640,
+        144
       ],
-      "id": "31a91f42-49e0-4986-8b66-aac363e50aca",
+      "id": "7927754b-1820-4b4e-a524-a519db156b97",
       "name": "check similarity"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('HTTP Request1').item.json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        144,
+        -192
+      ],
+      "id": "e0cec9a9-0320-4a08-8e66-aac2e930a05b",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "name": "=={{ $now.toFormat('yyyy-MM-dd_HH-mm-ss') + '.png' }}",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "root",
+          "mode": "list",
+          "cachedResultName": "/ (Root folder)",
+          "cachedResultUrl": "https://drive.google.com/drive"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        384,
+        -304
+      ],
+      "id": "b9418029-b737-437c-b9cd-778495165be5",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "wOm6xUmGuzd681eQ",
+          "name": "Google Drive account"
+        }
+      }
     }
   ],
   "pinData": {
@@ -522,11 +576,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Send a text message": {
-      "main": [
-        []
       ]
     },
     "HTTP Request": {
@@ -627,6 +676,11 @@
             "node": "Append row in sheet1",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -663,20 +717,30 @@
           }
         ]
       ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "c5e46ee7-53f8-4a4c-b634-f93fda91ce0f",
+  "versionId": "513bfc92-94bd-4f72-b88e-c52c50229658",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "b31c7c0fe261b085d27d7ae21fa163cb11ed1ac7fd603cb877e6d3f6a8399272"
+    "instanceId": "042739d1a62ed50d0170bed39c6a43fb9a20f465cdc34e426ff00390c3325783"
   },
   "nodeGroups": [],
-  "id": "XNa92jcDKEC0XdLy",
+  "id": "H4ZyWePrGzsikDwA",
   "tags": []
 }
